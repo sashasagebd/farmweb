@@ -1,6 +1,8 @@
-
+import { CartContext } from '../context/CartContext'
+import { useContext } from 'react'
 
 export default function Cart() {
+    const { cartItems } = useContext(CartContext);
 
     return(
         <div
@@ -13,7 +15,9 @@ export default function Cart() {
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div className="offcanvas-body">
-                
+                {cartItems.map(item =>
+                    <p>{item}</p>
+                )}
             </div>
         </div>
     )

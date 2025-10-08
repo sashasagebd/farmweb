@@ -25,7 +25,7 @@ export default function Account() {
             <p>Don't have an account yet?</p>
         </div>
 
-        <div className="col">
+        <div className="col" style={{display: none}}>
             <form>
                 <div className="form-group">
                     <label for="name">Name</label>

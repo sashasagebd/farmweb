@@ -2,7 +2,19 @@ import { CartContext } from '../context/CartContext'
 import { useContext } from 'react'
 
 export default function Cart() {
-    const { cartItems } = useContext(CartContext);
+    const { cartItems, removeFromCart } = useContext(CartContext);
+
+    function removeItem(itemId) {
+        removeFromCart(itemId);
+    }
+
+    function checkOut() {
+
+    }
+
+    function checkCopy() {
+        
+    }
 
     return(
         <div
@@ -16,8 +28,14 @@ export default function Cart() {
             </div>
             <div className="offcanvas-body">
                 {cartItems.map(item =>
-                    <p>{item}</p>
+                    <div className="card m-1" key={item.id}>
+                        <p>{item.name}</p>
+                        <p>{item.amount}</p>
+                        <img src={item.picture} />
+                        <button type="button" className="btn btn-primary" onClick={() => removeItem(item.id)}>Remove</button>
+                    </div>
                 )}
+                <button type="button" className="btn btn-primary" onClick={checkOut}>Checkout</button>
             </div>
         </div>
     )

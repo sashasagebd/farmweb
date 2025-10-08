@@ -1,10 +1,10 @@
-
+import farm from '../assets/muddy-springs-farm.avif'
 
 export default function HomePage() {
 
     return(
         <>
-            <img src="" alt="Farm"></img>
+            <img src={farm} alt="Farm"></img>
         </>
     )
 }
